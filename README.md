@@ -1,4 +1,4 @@
-# Controllable Integration 1.0.5 (Beta)
+# TACZ Controllable Compat 1.0.5 (Beta)
 
 *Made with AI. The ideas and core concepts came from me.*
 
