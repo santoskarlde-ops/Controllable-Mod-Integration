@@ -1,4 +1,4 @@
-# TACZ Controllable Compat 1.0.5
+# Controllable Integration 1.0.5
 
 Reuse an existing Forge 1.20.1 project's wrapper and libs (no copying of jars, no wrapper generation):
 
