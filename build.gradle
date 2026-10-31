@@ -1,0 +1,63 @@
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = mod_id
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: mapping_channel, version: mapping_version
+    copyIdeResources = true
+
+    runs {
+        configureEach {
+            workingDirectory project.file('run')
+            property 'forge.logging.console.level', 'debug'
+        }
+        client {
+            property 'forge.enabledGameTestNamespaces', mod_id
+        }
+    }
+}
+
+repositories {
+    // Folder holding controllable-forge-1.20.1-0.21.9.jar, framework-forge-1.20.1-0.8.0.jar and
+    // tacz-1.20.1-1.1.8-hotfix2.jar. Default ./libs; point at an existing folder with  -PlibsDir=/path/to/libs
+    flatDir {
+        dir(findProperty('libsDir') ?: 'libs')
+    }
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    // compileOnly: nothing is bundled, nothing is required at runtime by Gradle.
+    compileOnly fg.deobf("libs:controllable-forge-1.20.1:0.21.9")
+    compileOnly fg.deobf("libs:framework-forge-1.20.1:0.8.0")
+    compileOnly fg.deobf("libs:tacz-1.20.1:1.1.8-hotfix2")
+}
+
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes([
+            'Specification-Title'     : mod_id,
+            'Specification-Version'   : '1',
+            'Implementation-Title'    : project.name,
+            'Implementation-Version'  : project.jar.archiveVersion
+        ])
+    }
+    finalizedBy 'reobfJar'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

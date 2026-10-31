@@ -1,0 +1,41 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="tacz_controllable_compat"
+version="1.0.5"
+displayName="TACZ Controllable Compat"
+displayTest="IGNORE_ALL_VERSION"
+description='''
+Controller support for Timeless and Classics Zero (TACZ) through Controllable:
+rebindable TACZ bindings, debounced (hysteresis) analog triggers, attachment screen button.
+'''
+
+[[dependencies.tacz_controllable_compat]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.tacz_controllable_compat]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.tacz_controllable_compat]]
+modId="tacz"
+mandatory=false
+versionRange="[1.1.8,)"
+ordering="AFTER"
+side="CLIENT"
+
+[[dependencies.tacz_controllable_compat]]
+modId="controllable"
+mandatory=false
+versionRange="[0.21.9,)"
+ordering="AFTER"
+side="CLIENT"

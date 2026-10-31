@@ -1,0 +1,15 @@
+{
+  "key.categories.tacz_controllable_compat": "TACZ (Controller)",
+  "tacz_controllable_compat.binding.shoot": "Shoot",
+  "tacz_controllable_compat.binding.aim": "Aim Down Sights",
+  "tacz_controllable_compat.binding.reload": "Reload",
+  "tacz_controllable_compat.binding.melee": "Melee",
+  "tacz_controllable_compat.binding.fire_mode": "Fire Mode",
+  "tacz_controllable_compat.binding.inspect": "Inspect",
+  "tacz_controllable_compat.binding.attachments": "Attachments",
+  "tacz_controllable_compat.binding.vehicle_horn": "Vehicle: Horn",
+  "tacz_controllable_compat.binding.vehicle_exit": "Vehicle: Exit",
+  "tacz_controllable_compat.hint.accelerate": "Accelerate",
+  "tacz_controllable_compat.hint.brake": "Brake / Reverse",
+  "tacz_controllable_compat.hint.handbrake": "Handbrake"
+}
